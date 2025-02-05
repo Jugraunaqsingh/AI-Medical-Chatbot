@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Raunaq Home Doctor Chatbot</title>
+    <link rel="icon" href="images/stethoscope.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Language Toggle Button (Top Right Corner) -->
+    <!-- Language Toggle and Reset Buttons (Top Right Corner) -->
+<div class="top-buttons">
+    <button id="languageToggle" aria-label="Toggle Language">
+        <span id="languageLabel">En</span>
+    </button>
+    <button id="resetButton" aria-label="Reset Chatbot">
+        Reset
+    </button>
+</div>
+
+
+    <!-- Sidebar Toggle Button -->
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Open Sidebar">
+        <img src="images/side.png" alt="Open Sidebar" class="toggle-icon">
+    </button>
+
+    <!-- Sidebar (Left-Aligned and Collapsible) -->
+    <div class="sidebar" id="sidebar">
+        <button class="close-sidebar" id="closeSidebar" aria-label="Close Sidebar">
+            <img src="images/side2nd.png" alt="Close Sidebar" class="close-icon">
+        </button>
+        <img src="images/symptom_disease_icon.png" alt="Logo" class="sidebar-logo">
+        <h2>Home Doctor 🩺</h2>
+        <p>Your personal health assistant.</p>
+    </div>
+
+    <!-- Chat Display Area -->
+    <div class="chat-display" id="chatDisplay">
+        <!-- Initial Bot Message -->
+        <div class="chat-container bot-chat-container">
+            <img src="images/nurse_icon.png" alt="Nurse" class="message-icon">
+            <div class="chat-content bot-bubble chat-bubble">
+                <span class="sender-label">Nurse:</span> <span>Hello! How can I assist you today?</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Image Name Display Box -->
+    <div id="imageNameBox" class="image-name-box" style="display: none;">
+        <span id="imageName"></span>
+        <button id="removeImageButton" aria-label="Remove Image">✖️</button>
+    </div>
+
+    <!-- Audio Recording Container -->
+    <div id="audioRecordingContainer" class="audio-recording-container" style="display: none;">
+        <canvas id="waveformCanvas"></canvas>
+        <div class="recording-buttons">
+            <button id="startRecordingButton" aria-label="Start Recording">Start</button>
+            <button id="stopRecordingButton" aria-label="Stop Recording" disabled>Stop</button>
+            <button id="sendAudioButton" aria-label="Send Audio" disabled>Send</button>
+            <button id="cancelAudioButton" aria-label="Cancel">Cancel</button>
+        </div>
+    </div>
+
+    <!-- Fixed Input Container -->
+    <div class="fixed-input-container">
+        <input type="text" id="userInput" placeholder="Type your message here..." autocomplete="off">
+        
+        <!-- Attach Button -->
+        <button id="attachButton" aria-label="Attach File">
+            <span class="attach-icon" role="img" aria-label="Attach">📎</span>
+        </button>
+
+        <!-- Microphone Button -->
+        <button id="recordButton" aria-label="Record Audio">
+            <span class="record-icon" role="img" aria-label="Record">🎤</span>
+        </button>
+
+        <!-- Hidden File Input -->
+        <input type="file" id="fileInput" name="image" accept="image/*" style="display: none;">
+        
+        <!-- Send Button -->
+        <button id="sendButton" aria-label="Send Message">
+            <img src="images/arrow.png" alt="Send" class="send-icon">
+        </button>
+    </div>
+
+    <!-- Input Disclaimer -->
+    <div class="input-disclaimer">
+        AI Home Doctor can make mistakes. Please check back with a professional.
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
